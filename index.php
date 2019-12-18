@@ -6,4 +6,4 @@
 //// C:
 
 //PHP 2018 Presentatie - Installatie p.21
-echo 'Hello World!';
+echo 'Hello again World!';
