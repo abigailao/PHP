@@ -152,7 +152,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 15
-//echo "<style>img { width: 350px; height: 350px;}body {text-align: center}.rood{ border: red solid 5px;} .groen{border: green solid 5px}</style>";
+//echo "<style>img { width: 350px; height: 350px;}body {text-align: center}
+//.rood{ border: red solid 5px;} .groen{border: green solid 5px}</style>";
 //for ($i = 1; $i <= 9; $i++) {
 //    if($i % 2 == 0) {
 //        $class = "class='rood'";
@@ -194,10 +195,12 @@
 //        //(N/: The floor() function rounds a number DOWN to the nearest integer, if necessary.)
 //    }
 //}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 18/19
-$kappersagenda["uur"] = 16.00;
+// info 9.15 > mevr. Pietersen, 9.30 > Mevr. Willems, 9.45 > ...,
+// 10.00 > Paul van den Broek, 10.15 > Karel de Meeuw, 10.30 > ...
+$kappersagenda["uur"] = 9.45;
 print("De volgende momenten zijn nog beschikbaar:<ul>");
 foreach($kappersagenda as $afspraak => $tijd) {
     if($afspraak == "uur") {
