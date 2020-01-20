@@ -200,11 +200,69 @@
 ////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 18/19
 // info 9.15 > mevr. Pietersen, 9.30 > Mevr. Willems, 9.45 > ...,
 // 10.00 > Paul van den Broek, 10.15 > Karel de Meeuw, 10.30 > ...
-$kappersagenda["uur"] = 9.45;
-print("De volgende momenten zijn nog beschikbaar:<ul>");
-foreach($kappersagenda as $afspraak => $tijd) {
-    if($afspraak == "uur") {
-        print ("<li>".$tijd."</li>");
+//$kappersagenda["uur"] = 9.45;
+//print("De volgende momenten zijn nog beschikbaar:<ul>");
+//foreach($kappersagenda as $afspraak => $tijd) {
+//    if($afspraak == "uur") {
+//        print ("<li>".$tijd."</li>");
+//    }
+//}
+//print ("</ul>");
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////2019 Code organiseren met functies - voorbeeld
+//$sporten = array("handbal", "korfbal", "hockey", "schaatsen");
+//shuffle($sporten);
+//echo "<li>Er zijn ".count($sporten)." sporten in de array</li>";
+//foreach ($sporten as $sport){
+//    echo "<li>".$sport."</li>";
+//}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////2019 Code organiseren met functies - Voorbeeld
+//$bunchOfArrayVariables = array("Blue","Bang Bang", "Lies","Flower Road");
+//shuffle($bunchOfArrayVariables); //shuffle order of variables from array $bunchOfArrayVariables
+//$MoreArrayVariablesToShowTheUseOfMultipleArraysInAFunction = array("Neverland");
+//
+//
+//nameOfFunction($bunchOfArrayVariables); //nameOfArrayList is de name of the function you've created and
+////bunchOfArrayVariables shows which array you'd like to display under this function.
+//nameOfFunction($MoreArrayVariablesToShowTheUseOfMultipleArraysInAFunction); //^^^^^
+//
+//function nameOfFunction($name) {
+//    foreach ($name as $theArraysInAListCauseYN) {
+//        echo "<li>".$theArraysInAListCauseYN."</li>";
+//    }
+//}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////2019 Code organiseren met functies - Voorbeeld p.7
+//
+//function telOp($a, $b)
+//{
+//    $c = $a + $b;
+//    return $a." + ". $b ." = ". $c; //why change echo into return?
+//}
+//echo telOp(4, 5); //write echo behind 'telOp' in order to view/see result on html screen
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////2019Code organiseren met functies - Code organiseren met functies p.10
+//function celsiusFahrenheit($c) {
+//    $f = $c * 1.8 + 32; //formula: fahrenheit = celsius x 1.8 + 32
+//    return "Celsius in Fahrenheit = ".$c." > ".$f;
+//}
+//echo celsiusFahrenheit(9);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////2019Code organiseren met functies - Code organiseren met functies p.10
+
+
+function number($g, $a)
+{
+    if ($g % $a == 0) {
+        return true;
+    } else {
+        return "0 < false";
     }
 }
-print ("</ul>");
+echo number(34, 3);
