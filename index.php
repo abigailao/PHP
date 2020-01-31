@@ -1,268 +1,161 @@
-<!--2019 Introductie, installatie en publiceren met PHP - Installatie p.17-->
-<?php
-//echo 'Test';
-//
-////Foutmeling zonder ';' > Parse error: syntax error, unexpected end of file, expecting ',' or ';' in
-//// C:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>php 2020</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-//2019 Introductie, installatie en publiceren met PHP - Installatie p.21/22
-//echo 'Hello World!';
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Style the body */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
 
-////VB* 2019 Beginnen met programmeren in PHP - Beginnen met programmeren in PHP p.3/4
-//$aantal = 14;
-//$deze_jongen = "Deze jongen is ";
-//
-//echo $deze_jongen.$aantal. " jaar oud! ";
-//
-//$zin = "Oh, er staat een paard in de gang";
-//$waar = "bij juffrouw Jansen";
-//
-////VB strings samenvoegen
-//
-//$waar = "bij juffrouw Jansen.";
-//$volledigeZin = "Oh, er staat trouwens een paard in de gang " . $waar;
-//
-//echo $volledigeZin;
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Header/logo Title */
+        .header {
+            padding: 80px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+        }
 
-////2019 Beginnen met programmeren in PHP - Beginnen met programmeren in PHP p. 6 (\n = line breaker, HTML)
-//$a = "Ik heb niet gefaald";
-//$b = "die niet werken";
-//$c = 10000;
-//
-//echo $a.". Ik heb alleen ".$c." manieren gevonden ".$b."."."\n<br/>\n"." -Thomas Edison";
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
 
-////2019 Beginnen met programmeren in PHP - Beginnen met programmeren in PHP p. 7
-//$a = "die geen fout";
-//$b = "en";
-//$c = "niet.";
-//
-//echo "Mensen ".$a.$b." maken, werken ".$c."\n<br/>\n"."-Albert Plesman (KLM)";
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Style the top navigation bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
 
-////2019 Beginnen met programmeren in PHP - Beginnen met programmeren in PHP p. 8
-//$a = "ry";
-//$b = ", but";
-//$c = "fail";
-//
-//echo "T".$a." and ".$c.$b." never ".$c." to t".$a."."."\n<br/>\n"."-Tyra Banks";
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Style the navigation bar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
 
-////2019 Beginnen met programmeren in PHP - Beginnen met programmeren in PHP p. 9 (N/: \" = allows quotations marks)
-//$a = "\"omgaan";
-//$b = "met";
-//$c = "teleu";
-//
-//echo "De cursus ".$a." ".$b." ".$c."rstellingen\" kan vanavond helaas niet doorgaan."."\n <br> \n"."- Herman Finkers";
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Right-aligned link */
+        .navbar a.right {
+            float: right;
+        }
 
-////VB* 2019 Arrays, controlestructuren en loops - Arrays en andere datatypen p. 2 (N/: an array contains strings)
-//$a = array(1,5,66,"truus");
-//
-//echo $a[0]."<br>"; //(N/: 0 refers to the first element in the array. The answer is 1.)
-//echo $a[2]; //(N/: 2 refers to the third element in the array.. The answer is therefore 66.)
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Change color on hover */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-////VB* 2019 Arrays, controlestructuren en loops - Arrays en andere datatypen p. 3
-//$a = array(); //This isn't necessary!
-//$a["vrouw"] = "truus";
-//$a["leeftijd"] = "67";
-//$a ["gewicht"] = 64;
-//
-//echo $a["leeftijd"]; //The result is 67
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Column container */
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+        }
 
-////VB* 2019 Arrays, controlestructuren en loops - Arrays en andere datatypen p. 4
-//$alle["leeftijd"] = 12;
-//$alle["naam"] = "Jan";
-//$alle["telefoon"] = "06129943540";
-//
-//foreach ($alle as $label => $waarde) {
-//    echo "de ".$label." is: ".$waarde."<br>";
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Create two unequal columns that sits next to each other */
+        /* Sidebar/left column */
+        .side {
+            -ms-flex: 30%; /* IE10 */
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
 
-////VB* 2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 8
-//$a = 6;
-//$b = 7;
-//
-//if ($a > $b) {
-//    echo "A";//Process code if correct
-//} else {
-//    echo "B";//Process code if incorrect
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Main column */
+        .main {
+            -ms-flex: 70%; /* IE10 */
+            flex: 70%;
+            background-color: white;
+            padding: 20px;
+        }
 
-////VB* 2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 9
-//$nu = date('H');
-//if ($nu >= 12) {
-//    echo "Het is middag";
-//} else if ($nu > 6) {
-//    echo "Het is ochtend";
-//} else {
-//    echo "Het is nacht";
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Fake image, just for this example */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
 
-////VB* 2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 10
-//$jaar = 6;
-//$kaarsjes = 0; // draw a few candles
-//
-//while ($kaarsjes < $jaar) { // As long as $kaarsjes is less than 6 ...
-//    echo " |*| ";
-//    $kaarsjes++; // This will add an extra number like = $kaarsjes + 1
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+        }
 
-////VB* 2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 11
-//$jaar = 29;
-//
-//for ($kaarsjes = 0; $kaarsjes < $jaar; $kaarsjes++) {
-//    echo " |*| "; // 29 candles
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
 
-////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 12 (use foreach when going through arrays
-//// to prevent random errors)
-//$planten = array("nature1", "nature2","nature3","nature4","nature5","nature6","nature7","nature8","nature9","nature10");
-//
-//echo "<ul>";
-//foreach ($planten as $plant){
-//    echo "<li><img src='img/$plant.jpg'></li>";
-//}
-//echo "</ul>";
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
 
-////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 13
-//echo "<style>body { text-align: center}</style>";
-//for ($i = 0; $i<=9; $i++) {
-//   for($j = 0; $j<$i; $j++) {
-//       echo "*";
-//   }
-//    echo "*<br>";
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<div class="header">
+    <h1>PHP 2020</h1>
+    <p>.</p>
+</div>
 
-////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 14 (Use the xmas tree as an example)
-//for ($x = 35; $x >= 25; $x--){
-//    echo "hoppelepee ";
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<div class="navbar">
+    <a href="001.php">001</a>
+    <a href="002.php">002</a>
+    <a href="003.php">003</a>
+    <a href="004.php">004</a>
+    <a href="formulier.html">formulier</a>
+    <a href="#" class="right">Link</a>
+</div>
 
-////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 15
-//echo "<style>img { width: 350px; height: 350px;}body {text-align: center}
-//.rood{ border: red solid 5px;} .groen{border: green solid 5px}</style>";
-//for ($i = 1; $i <= 9; $i++) {
-//    if($i % 2 == 0) {
-//        $class = "class='rood'";
-//    } else{
-//        $class = "class='groen'";
-//    }
-//    echo "<img ".$class. "src='img/nature".$i.".jpg'>";
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<div class="row">
+    <div class="side">
+        <h2>About Me</h2>
+        <h5>Photo of me:</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        <h3>More Text</h3>
+        <p>Lorem ipsum dolor sit ame.</p>
+        <div class="fakeimg" style="height:60px;">Image</div><br>
+        <div class="fakeimg" style="height:60px;">Image</div><br>
+        <div class="fakeimg" style="height:60px;">Image</div>
+    </div>
+    <div class="main">
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Dec 7, 2019</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <br>
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Sep 2, 2019</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+</div>
 
-////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 16
-//
-//$leeftijd = 2;
-//$bedrag = 10;
-//
-//if($leeftijd > 65){
-//    $bedrag = $bedrag * 0.5;
-//}
-//if($leeftijd <= 12){
-//    $bedrag = $bedrag * 0.5;
-//}
-//if($leeftijd < 3){
-//    $bedrag = $bedrag * 0.0;
-//}
-//echo $bedrag;
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<div class="footer">
+    <h2>Footer</h2>
+</div>
 
-////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 17
-// one image for each 5 swimmers. Use array foreach
-//echo "<style>.img-size {width: 50px; height: 50px;</style>";
-//$zc["De spartelkuikens "] = 25;
-//$zc["De waterbuffels "] = 32;
-//$zc["plonsmderin "] = 11;
-//$zc["bommetje "] = 23;
-//foreach ($zc as $label => $aantal){
-//echo '<br>'. $label.$aantal;
-//    for($i=0; $i<floor($aantal/5);$i++){
-//        echo "<img class='img-size' src='img/zwemmer.png'>";
-//        //(N/: The floor() function rounds a number DOWN to the nearest integer, if necessary.)
-//    }
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 18/19
-// info 9.15 > mevr. Pietersen, 9.30 > Mevr. Willems, 9.45 > ...,
-// 10.00 > Paul van den Broek, 10.15 > Karel de Meeuw, 10.30 > ...
-//$kappersagenda["uur"] = 9.45;
-//print("De volgende momenten zijn nog beschikbaar:<ul>");
-//foreach($kappersagenda as $afspraak => $tijd) {
-//    if($afspraak == "uur") {
-//        print ("<li>".$tijd."</li>");
-//    }
-//}
-//print ("</ul>");
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////2019 Code organiseren met functies - voorbeeld
-//$sporten = array("handbal", "korfbal", "hockey", "schaatsen");
-//shuffle($sporten);
-//echo "<li>Er zijn ".count($sporten)." sporten in de array</li>";
-//foreach ($sporten as $sport){
-//    echo "<li>".$sport."</li>";
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////2019 Code organiseren met functies - Voorbeeld
-//$bunchOfArrayVariables = array("Blue","Bang Bang", "Lies","Flower Road");
-//shuffle($bunchOfArrayVariables); //shuffle order of variables from array $bunchOfArrayVariables
-//$MoreArrayVariablesToShowTheUseOfMultipleArraysInAFunction = array("Neverland");
-//
-//
-//nameOfFunction($bunchOfArrayVariables); //nameOfArrayList is de name of the function you've created and
-////bunchOfArrayVariables shows which array you'd like to display under this function.
-//nameOfFunction($MoreArrayVariablesToShowTheUseOfMultipleArraysInAFunction); //^^^^^
-//
-//function nameOfFunction($name) {
-//    foreach ($name as $theArraysInAListCauseYN) {
-//        echo "<li>".$theArraysInAListCauseYN."</li>";
-//    }
-//}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////2019 Code organiseren met functies - Voorbeeld p.7
-//
-//function telOp($a, $b)
-//{
-//    $c = $a + $b;
-//    return $a." + ". $b ." = ". $c; //why change echo into return?
-//}
-//echo telOp(4, 5); //write echo behind 'telOp' in order to view/see result on html screen
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////2019Code organiseren met functies - Code organiseren met functies p.10
-//function celsiusFahrenheit($c) {
-//    $f = $c * 1.8 + 32; //formula: fahrenheit = celsius x 1.8 + 32
-//    return "Celsius in Fahrenheit = ".$c." > ".$f;
-//}
-//echo celsiusFahrenheit(9);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////2019Code organiseren met functies - Code organiseren met functies p.10
-
-
-function number($g, $a)
-{
-    if ($g % $a == 0) {
-        return true;
-    } else {
-        return "0 < false";
-    }
-}
-echo number(34, 3);
+</body>
+</html>
