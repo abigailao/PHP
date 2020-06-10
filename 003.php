@@ -87,9 +87,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 14 (Use the xmas tree as an example)
-//for ($x = 35; $x >= 25; $x--){
-//    echo "hoppelepee ";
-//}
+for ($x = 35; $x >= 25; $x--){
+    echo "hoppelepee ";
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 15
@@ -141,11 +141,11 @@
 //2019 Arrays, controlestructuren en loops - Controlestructuren en loops p. 18/19
 /* info 9.15 > mevr. Pietersen, 9.30 > Mevr. Willems, 9.45 > ...,
 10.00 > Paul van den Broek, 10.15 > Karel de Meeuw, 10.30 > ...*/
-$kappersagenda["uur"] = 9.45;
-print("De volgende momenten zijn nog beschikbaar:<ul>");
-foreach($kappersagenda as $afspraak => $tijd) {
-    if($afspraak == "uur") {
-        print ("<li>".$tijd."</li>");
-    }
-}
-print ("</ul>");
+//$kappersagenda["uur"] = 9.45;
+//print("De volgende momenten zijn nog beschikbaar:<ul>");
+//foreach($kappersagenda as $afspraak => $tijd) {
+//    if($afspraak == "uur") {
+//        print ("<li>".$tijd."</li>");
+//    }
+//}
+//print ("</ul>");

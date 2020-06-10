@@ -122,7 +122,8 @@
     <a href="002.php">002</a>
     <a href="003.php">003</a>
     <a href="004.php">004</a>
-    <a href="formulier.html">formulier</a>
+    <a href="005/formulier.html">005</a>
+    <a href="006.php">006</a>
     <a href="#" class="right">Link</a>
 </div>
 
